@@ -16,13 +16,6 @@ import org.springframework.roo.addon.json.RooJson;
 @RooJson
 public class Comment {
 
-//    /**
-//     */
-//    @NotNull
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "ID")
-//    private Integer id;
-
     /**
      */
     @NotNull
@@ -32,7 +25,7 @@ public class Comment {
     /**
      */
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(style = "LL")
     @Column(name = "COMMENT_DATE")
     private Date commentDate;
 }
