@@ -39,10 +39,6 @@ public class ClickEventController {
     @RequestMapping(value = "/click_event/add", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> addClickEventJson(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
-//        headers.add("Access-Control-Allow-Headers", "Content-Type");
-//        headers.add("Access-Control-Allow-Origin", "*");
-//        headers.add("Access-Control-Allow-Methods", "POST, GET");
-//        headers.add("Content-Type", "application/json");
         try {
             ClickEvent event = ClickEvent.fromJsonToClickEvent(json);
             if (event.getClickDate() == null) {
