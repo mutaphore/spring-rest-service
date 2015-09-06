@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_chen_spring_rest_model_ClickEvent" object="${clickevent}" path="/click_event" z="0aRw0zEE3SuChxb4uFDTa4DQ21g=">
+        <field:display date="true" dateTimePattern="${clickEvent_clickdate_date_format}" field="clickDate" id="s_com_chen_spring_rest_model_ClickEvent_clickDate" object="${clickevent}" z="pdzkq5gVvPZ3VuqQXS0vFPmVEAs="/>
+        <field:display field="description" id="s_com_chen_spring_rest_model_ClickEvent_description" object="${clickevent}" z="OejJqs7Xr4ZFuA0rWDUIl1ggoPg="/>
+        <field:display field="ipAddress" id="s_com_chen_spring_rest_model_ClickEvent_ipAddress" object="${clickevent}" z="QDxpRDyrJQQhdxT6AggNbbN+5QU="/>
+    </page:show>
+</div>

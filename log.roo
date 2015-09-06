@@ -53,3 +53,4 @@ perform tests
 help
 web mvc scaffold --class ~.rest.model.ClickEvent
 web mvc scaffold --class ~.rest.model.ClickEventController --path /click_event
+web mvc json add --class ~.rest.service.ClickEventController --jsonObject ~.rest.model.ClickEvent

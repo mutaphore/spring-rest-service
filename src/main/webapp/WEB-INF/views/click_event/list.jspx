@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_chen_spring_rest_model_ClickEvent" items="${clickevents}" z="qTaptUkFqEwLdBuSizr/6EtdhF4=">
+        <table:table data="${clickevents}" id="l_com_chen_spring_rest_model_ClickEvent" path="/click_event" z="R0z/xMaGmGqSOUWenT3ATKAXeok=">
+            <table:column date="true" dateTimePattern="${clickEvent_clickdate_date_format}" id="c_com_chen_spring_rest_model_ClickEvent_clickDate" property="clickDate" z="u1F6kVkYKsyqG/n+470DYEOVp5U="/>
+            <table:column id="c_com_chen_spring_rest_model_ClickEvent_description" property="description" z="hvAtow6reacBLNqgNt43SnS80Vc="/>
+            <table:column id="c_com_chen_spring_rest_model_ClickEvent_ipAddress" property="ipAddress" z="i5sqTGuYtoYh6U6Dmm31WKnt0W8="/>
+        </table:table>
+    </page:list>
+</div>

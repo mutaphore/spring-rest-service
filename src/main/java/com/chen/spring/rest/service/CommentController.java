@@ -29,7 +29,7 @@ public class CommentController {
 
     @RequestMapping(value = "/comment/add", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> addComment(@RequestBody String json) {
+    public ResponseEntity<String> addCommentJson(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         try {
