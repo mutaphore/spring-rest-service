@@ -42,6 +42,17 @@
         <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
         <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
     </filter>
+
+    <filter>
+        <filter-name>SimpleCORSFilter</filter-name>
+        <filter-class>com.chen.spring.rest.filters.SimpleCORSFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>SimpleCORSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>

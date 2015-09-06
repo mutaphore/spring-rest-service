@@ -18,6 +18,10 @@ import java.util.Date;
 @RooWebJson(jsonObject = ClickEvent.class)
 public class ClickEventController {
 
+    /**
+     * Method that returns a testing ClickEvent object
+     * @return ClickEvent object as a JSON String
+     */
     @RequestMapping(value = "/click_event/test", method = RequestMethod.GET)
     public ResponseEntity<ClickEvent> doTest() {
         ClickEvent test = new ClickEvent();
@@ -28,21 +32,24 @@ public class ClickEventController {
     }
 
     /**
-     * Ajax request to add a click event
-     * @param json
-     * @return
+     * Method to handle ajax request that persists a ClickEvent object to the database
+     * @param json A JSON string with the following keys: description, ipAddress, clickDate
+     * @return A JSON string representing the object persisted into the database
      */
     @RequestMapping(value = "/click_event/add", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> addClickEventJson(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
+//        headers.add("Access-Control-Allow-Headers", "Content-Type");
+//        headers.add("Access-Control-Allow-Origin", "*");
+//        headers.add("Access-Control-Allow-Methods", "POST, GET");
+//        headers.add("Content-Type", "application/json");
         try {
-            headers.add("Content-Type", "application/json");
             ClickEvent event = ClickEvent.fromJsonToClickEvent(json);
             if (event.getClickDate() == null) {
                 event.setClickDate(new Date());
             }
             event.persist();
-            return new ResponseEntity<String>(event.toJson(), HttpStatus.OK);
+            return new ResponseEntity<String>(event.toJson(), headers, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<String>("{\"ERROR\":"+e.getMessage()+"\"}", headers, HttpStatus.INTERNAL_SERVER_ERROR);
         }
