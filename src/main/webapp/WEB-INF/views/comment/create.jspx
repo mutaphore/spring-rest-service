@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_chen_spring_rest_model_Comment" modelAttribute="comment" path="/comment" render="${empty dependencies}" z="2+P4btIAD6X2ZH3Z50xlox8nmug=">
+        <field:input field="comment" id="c_com_chen_spring_rest_model_Comment_comment" required="true" z="3vOT8YsJi8XCjX7V49yJqc1zct8="/>
+        <field:datetime dateTimePattern="${comment_commentdate_date_format}" field="commentDate" id="c_com_chen_spring_rest_model_Comment_commentDate" z="x4uOAwnL43s8PdvelWxq1tnc3dg="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_chen_spring_rest_model_Comment" render="${not empty dependencies}" z="bMsZcd294f+1nZx9gvzF225mUp4="/>
+</div>

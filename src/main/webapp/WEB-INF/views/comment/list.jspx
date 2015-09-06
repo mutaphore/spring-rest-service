@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_chen_spring_rest_model_Comment" items="${comments}" z="l2S2ePBpuNrJa28rqBbH8c5/3dw=">
+        <table:table data="${comments}" id="l_com_chen_spring_rest_model_Comment" path="/comment" z="Xag9rItQx9LZh5FQHjwCI6ml6nc=">
+            <table:column id="c_com_chen_spring_rest_model_Comment_comment" property="comment" z="EvFviI2purMnsH/hlk4JkiSGQLE="/>
+            <table:column date="true" dateTimePattern="${comment_commentdate_date_format}" id="c_com_chen_spring_rest_model_Comment_commentDate" property="commentDate" z="oItxdeQoZ+vAGGV4CDT6Vd70i0E="/>
+        </table:table>
+    </page:list>
+</div>

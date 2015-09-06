@@ -1,0 +1,36 @@
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-09-05 21:23:09
+hint
+project --topLevelPackage com.chen.spring
+hint
+jpa setup --provider HIBERNATE --database POSTGRES
+hint
+entity jpa --class ~rest.model.Comment --testAutomatically 
+hint
+field number --fieldName id --type java.lang.Integer --notNull
+field string --fieldName comment --notNull 
+hint
+perform tests
+perform tests
+hint
+hint web mvc
+controller scaffold --class ~.rest.service.CommentController --path /comment
+field date --fieldName commentDate --type java.util.Date
+hint
+hint json
+hint json all
+help
+perform tests
+quit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-09-05 22:51:33
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-09-06 10:36:41
+hint web mvc
+help 
+hint
+web mvc json all
+json add --class ~.rest.model.Comment
+help
+web mvc json all
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-09-06 14:15:34
+hint
+perform tests
+perform tests
