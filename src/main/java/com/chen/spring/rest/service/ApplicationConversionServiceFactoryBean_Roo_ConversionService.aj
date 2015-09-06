@@ -3,6 +3,7 @@
 
 package com.chen.spring.rest.service;
 
+import com.chen.spring.rest.model.ClickEvent;
 import com.chen.spring.rest.model.Comment;
 import com.chen.spring.rest.service.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -12,6 +13,30 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    public Converter<ClickEvent, String> ApplicationConversionServiceFactoryBean.getClickEventToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.chen.spring.rest.model.ClickEvent, java.lang.String>() {
+            public String convert(ClickEvent clickEvent) {
+                return new StringBuilder().append(clickEvent.getClickDate()).append(' ').append(clickEvent.getDescription()).append(' ').append(clickEvent.getIpAddress()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, ClickEvent> ApplicationConversionServiceFactoryBean.getIdToClickEventConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.chen.spring.rest.model.ClickEvent>() {
+            public com.chen.spring.rest.model.ClickEvent convert(java.lang.Long id) {
+                return ClickEvent.findClickEvent(id);
+            }
+        };
+    }
+    
+    public Converter<String, ClickEvent> ApplicationConversionServiceFactoryBean.getStringToClickEventConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.chen.spring.rest.model.ClickEvent>() {
+            public com.chen.spring.rest.model.ClickEvent convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), ClickEvent.class);
+            }
+        };
+    }
     
     public Converter<Comment, String> ApplicationConversionServiceFactoryBean.getCommentToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.chen.spring.rest.model.Comment, java.lang.String>() {
@@ -38,6 +63,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getClickEventToStringConverter());
+        registry.addConverter(getIdToClickEventConverter());
+        registry.addConverter(getStringToClickEventConverter());
         registry.addConverter(getCommentToStringConverter());
         registry.addConverter(getIdToCommentConverter());
         registry.addConverter(getStringToCommentConverter());

@@ -89,7 +89,7 @@ privileged aspect CommentController_Roo_Controller {
     }
     
     void CommentController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("comment_commentdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("comment_commentdate_date_format", DateTimeFormat.patternForStyle("LL", LocaleContextHolder.getLocale()));
     }
     
     void CommentController.populateEditForm(Model uiModel, Comment comment) {

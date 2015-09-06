@@ -18,17 +18,13 @@ public class CommentController {
     @RequestMapping(value = "/comment/test", method = RequestMethod.GET)
     @ResponseBody
     public String doTest() {
-        String testStr = "Comment test worked!";
+        String testStr = "Comment test worked!\n";
         return testStr;
     }
 
     @RequestMapping(value = "/comment/test2/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> doTest2(@PathVariable Long id) {
-        if (id == null) {
-            return new ResponseEntity<String>("Comment test 2 worked! No id. ", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<String>("Comment test 2 worked! Id was: " + id, HttpStatus.OK);
-        }
+        return new ResponseEntity<String>("Comment test 2 worked! Id was: " + id  + "\n", HttpStatus.OK);
     }
 
     @RequestMapping(value = "/comment/add", method = RequestMethod.POST, headers = "Accept=application/json")

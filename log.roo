@@ -34,3 +34,22 @@ web mvc json all
 hint
 perform tests
 perform tests
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-09-06 15:01:25
+hint
+hint entities
+entity jpa --class ~.rest.model.ClickEvent --testAutomatically 
+field date --fieldName clickDate --type java.util.Date
+hint
+json add --class ~.rest.model.ClickEvent
+hint
+hint web mvc
+help
+field string --fieldName description
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-09-06 15:08:44
+hint
+hint fields
+field string --fieldName ipAddress --class ~.rest.model.ClickEvent
+perform tests
+help
+web mvc scaffold --class ~.rest.model.ClickEvent
+web mvc scaffold --class ~.rest.model.ClickEventController --path /click_event

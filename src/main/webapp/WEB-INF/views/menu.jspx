@@ -7,5 +7,9 @@
             <menu:item id="i_comment_new" messageCode="global_menu_new" url="/comment?form" z="UEQ11FTiuO4T7fFQfiP4qLQoP1A="/>
             <menu:item id="i_comment_list" messageCode="global_menu_list" url="/comment?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YDLbyyWaEkHSqXtsJwGrC5dQYkU="/>
         </menu:category>
+        <menu:category id="c_clickevent" z="1Ze1TksLoweVIKUNfRsZJG2gveE=">
+            <menu:item id="i_clickevent_new" messageCode="global_menu_new" url="/click_event?form" z="3I0zpnGizksZzFbkL5wsFSEmPSk="/>
+            <menu:item id="i_clickevent_list" messageCode="global_menu_list" url="/click_event?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4XJ7S0vMF+4cZNSmxyT7a4KomIY="/>
+        </menu:category>
     </menu:menu>
 </div>
