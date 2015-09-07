@@ -1,5 +1,5 @@
 # spring-rest-service
-RESTful service API built using the Java Spring Framework and Spring Roo. Server is hosted on AWS EC2 using a Postgres database.
+RESTful service API built using the Java Spring Framework and Spring Roo. Server is hosted on AWS EC2 using a Postgres database. 
 
 ## Current available endpoints
 ### (GET) /comment/test
@@ -25,7 +25,7 @@ Add a new comment.
 
 ### (POST) /click_event/add
 Add a new click event.
-* `clickDate` Date in which the click was made
+* `clickDate` Date in which the click was made. Omit this if you want to take the current time.
 * `description` Description of the click activity
 * `ipAddress` IP address of the client that made the click
 
